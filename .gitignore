@@ -14,3 +14,7 @@ yarn-error.log
 #
 tmp
 dist
+
+# Parcel Bundler
+#
+.cache
