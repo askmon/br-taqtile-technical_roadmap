@@ -53,7 +53,7 @@ function update(source) {
       links = treeData.descendants().slice(1);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d){ d.y = d.depth * 180});
+  nodes.forEach(function(d){ d.y = d.depth * 200});
 
   // ****************** Nodes section ***************************
 
@@ -69,24 +69,21 @@ function update(source) {
     })
     .on('click', click);
 
-  // Add Circle for the nodes
-  nodeEnter.append('circle')
-      .attr('class', 'node')
-      .attr('r', 1e-6)
-      .style("fill", function(d) {
-          return d._children ? "lightsteelblue" : "#fff";
-      });
-
   // Add labels for the nodes
   nodeEnter.append('text')
       .attr("dy", ".35em")
-      .attr("x", function(d) {
-          return d.children || d._children ? -13 : 13;
+      .attr("x", () => 6)
+      .text(function(d) { return d.data.name; })
+      .each(function(d) { d.width = Math.max(32, this.getComputedTextLength() + 12); });
+
+  nodeEnter.insert("rect", "text")
+      .attr("ry", 6)
+      .attr("rx", 6)
+      .attr("y", -10)
+      .attr("height", 20)
+      .attr("width", function(d) {
+        return d.width;
       })
-      .attr("text-anchor", function(d) {
-          return d.children || d._children ? "end" : "start";
-      })
-      .text(function(d) { return d.data.name; });
 
   // UPDATE
   var nodeUpdate = nodeEnter.merge(node);
@@ -122,6 +119,7 @@ function update(source) {
   // On exit reduce the opacity of text labels
   nodeExit.select('text')
     .style('fill-opacity', 1e-6);
+
 
   // ****************** links section ***************************
 
@@ -163,12 +161,10 @@ function update(source) {
   // Creates a curved (diagonal) path from parent to the child nodes
   function diagonal(s, d) {
 
-    let path = `M ${s.y} ${s.x}
-            C ${(s.y + d.y) / 2} ${s.x},
-              ${(s.y + d.y) / 2} ${d.x},
-              ${d.y} ${d.x}`
-
-    return path
+    return `M ${d.y} ${d.x}
+            C ${(s.y + d.y) / 2} ${d.x},
+              ${(s.y + d.y) / 2} ${s.x},
+              ${s.y} ${s.x}`;
   }
 
   // Toggle children on click.
