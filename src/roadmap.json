@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Taqtile Web Development",
+    "id": "root",
+    "type": "root",
+    "parentId": ""
+  },
+  {
+    "name": "Learn the Basics",
+    "id": "foundation",
+    "type": "checkpoint",
+    "parentId": "root"
+  },
+  {
+    "name": "Javascript",
+    "id": "foundation_javascript",
+    "type": "topic",
+    "recommendation": "solid",
+    "parentId": "foundation"
+  },
+  {
+    "name": "Basic concepts",
+    "id": "foundation_javascript_basics",
+    "type": "topic",
+    "recommendation": "solid",
+    "parentId": "foundation_javascript"
+  },
+  {
+    "name": "HTML",
+    "id": "foundation_html",
+    "type": "topic",
+    "recommendation": "solid",
+    "parentId": "foundation"
+  },
+  {
+    "name": "Towards Taqtile Stack",
+    "id": "core",
+    "type": "checkpoint",
+    "parentId": "foundation"
+  },
+  {
+    "name": "Basic Taqtile Stack",
+    "id": "basics",
+    "type": "checkpoint",
+    "parentId": "core"
+  },
+  {
+    "name": "Developer",
+    "id": "developer",
+    "type": "checkpoint",
+    "parentId": "basics"
+  }
+]
