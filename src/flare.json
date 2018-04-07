@@ -1,5 +1,6 @@
 {
   "name": "flare",
+  "displayAdditionalInfoFlag": "true",
   "children": [
    {
     "name": "analytics",
@@ -84,6 +85,7 @@
    },
    {
     "name": "display",
+    "displayAdditionalInfoFlag": "true",
     "children": [
      {"name": "DirtySprite", "size": 8833},
      {"name": "LineSprite", "size": 1732},
@@ -133,6 +135,7 @@
      {"name": "Maximum", "size": 843},
      {
       "name": "methods",
+      "displayAdditionalInfoFlag": "true",
       "children": [
        {"name": "add", "size": 593},
        {"name": "and", "size": 330},

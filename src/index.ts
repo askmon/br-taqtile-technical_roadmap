@@ -5,7 +5,7 @@ var treeData = require('./flare.json');
 // Set the dimensions and margins of the diagram
 var margin = {top: 20, right: 90, bottom: 30, left: 90},
     width = 2400 - margin.left - margin.right,
-    height = 960 - margin.top - margin.bottom;
+    height = 960 - margin.top - margin.bottom;			
 
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
@@ -84,6 +84,23 @@ function update(source) {
       .attr("width", function(d) {
         return d.width;
       })
+
+  // Add coment flag when necessary
+  var nodeWithAdditionalInfo = node.enter()
+  .filter(function(d) { return d.data.displayAdditionalInfoFlag; })
+  .append('g')
+    .attr('class', 'flag')
+    .attr("transform", function(d) {
+      return "translate(" + d.y + "," + d.x + ")";}
+    );
+
+  nodeWithAdditionalInfo.append("rect")
+    .attr("ry", 6)
+    .attr("rx", 6)
+    .attr("x", (d) => { return (d.width - 10)/2; })
+    .attr("y", 15)
+    .attr("height", 10)
+    .attr("width", 10);
 
   // UPDATE
   var nodeUpdate = nodeEnter.merge(node);
@@ -179,3 +196,4 @@ function update(source) {
     update(d);
   }
 }
+
