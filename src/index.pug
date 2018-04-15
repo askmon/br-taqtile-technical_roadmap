@@ -34,10 +34,22 @@ html(lang="en")
         stroke-width: 1.5px;
       }
 
+      .tooltip {
+        position: absolute;
+        line-height: 1;
+        width: 100px;					
+        padding: 2px;
+        text-align: center;
+        background: #f2efea;
+        color: #403d58;
+        border: 2px solid #403d58;
+        border-radius: 8px;
+      }
+
 
   body
     h1 Taqtile's Developer Roadmap
-    svg(steyle="position:absolute;width:0;height:0;top:-200px;")
+    svg(style="position:absolute;width:0;height:0;top:-200px;")
       marker(id="end" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto")
         path(d="M0 10 L10 5 L0 0 Z")
       marker(id="marker" viewBox="0 0 6 6" refY="3" markerWidth="7" markerHeight="7" orient="auto")

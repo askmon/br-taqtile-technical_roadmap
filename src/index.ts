@@ -109,7 +109,8 @@ function update(source) {
     .style('opacity', 1e-6)
     .attr('transform', function(d) {
       return 'translate(' + d.y + ',' + d.x + ')';
-    });
+    })
+    .on('click', showTooltip);
 
   flagEnter
     .append('rect')
@@ -244,5 +245,32 @@ function update(source) {
       d._children = null;
     }
     update(d);
+  }
+
+  function showTooltip(d) {
+    removeAllTooltips();
+
+    let tooltip = d3
+      .select('body')
+      .append('div')
+      .attr('class', 'tooltip')
+      .style('opacity', '0')
+      .style('display', 'none');
+
+    tooltip
+      .transition()
+      .duration(200)
+      .style('opacity', 0.9)
+      .style('display', 'block');
+    tooltip
+      .html("<p>Hi, i'm a tooltip </p>")
+      .style('left', d.y + 108 + d.width / 2 + 'px') //108 = tooltip width,
+      .style('top', d.x + 45 + 72 + 'px'); //45 = difference between flag and top of node, 72 = tooltip height
+  }
+
+  function removeAllTooltips() {
+    let tooltips = d3.selectAll('.tooltip');
+    console.log(tooltips);
+    tooltips.remove();
   }
 }
