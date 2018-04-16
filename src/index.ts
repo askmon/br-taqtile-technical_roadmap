@@ -260,17 +260,20 @@ function update(source) {
     tooltip
       .transition()
       .duration(200)
-      .style('opacity', 0.9)
+      .style('opacity', 1)
       .style('display', 'block');
     tooltip
-      .html("<p>Hi, i'm a tooltip </p>")
+      .html(getTooltipContent(d))
       .style('left', d.y + 108 + d.width / 2 + 'px') //108 = tooltip width,
       .style('top', d.x + 45 + 72 + 'px'); //45 = difference between flag and top of node, 72 = tooltip height
   }
 
   function removeAllTooltips() {
     let tooltips = d3.selectAll('.tooltip');
-    console.log(tooltips);
     tooltips.remove();
+  }
+
+  function getTooltipContent(d) {
+    return d.data.additionalInfo.reduce((accumulator, text) => accumulator + "<p>" + text + "</p>");
   }
 }

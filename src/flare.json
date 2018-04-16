@@ -1,7 +1,11 @@
 {
   "name": "flare",
   "displayAdditionalInfoFlag": "true",
-  "additionalInfo": "https://bost.ocks.org/mike/selection/",
+  "additionalInfo": [
+    "https://bost.ocks.org/mike/selection/",
+    "https://bl.ocks.org/d3noob/43a860bc0024792f8803bba8ca0d5ecd",
+    "http://alignedleft.com/tutorials/d3/binding-data/"
+  ], 
   "children": [
     {
       "name": "analytics",
