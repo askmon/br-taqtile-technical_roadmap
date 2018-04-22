@@ -35,6 +35,42 @@ root.y0 = 0;
 // Collapse after the second level
 root.children.forEach(collapse);
 
+// Creates modal
+createModal();
+
+function createModal() {
+  let modal = d3
+    .select('body')
+    .append('div')
+    .attr('class', 'modal fade')
+    .attr('id', 'nodeModal')
+    .attr('tabIndex', '-1')
+    .attr('role', 'dialog')
+    .attr('aria-labelledby', 'nodeModal');
+  let modalContent = modal
+    .append('div')
+    .attr('class', 'modal-dialog')
+    .attr('role', 'document')
+    .append('div')
+    .attr('class', 'modal-content');
+  let modalHeader = modalContent.append('div').attr('class', 'modal-header');
+
+  modalHeader
+    .append('h5')
+    .attr('class', 'modal-title')
+    .attr('id', 'nodeModalLabel')
+    .html('Modal Title');
+  modalHeader
+    .append('button')
+    .attr('type', 'button')
+    .attr('class', 'close')
+    .attr('data-dismiss', 'modal')
+    .attr('aria-label', 'Close')
+    .html('<span aria-hidden="true">&times;</span>');
+
+  modalContent.append('div').attr('class', 'modal-body');
+}
+
 update(root);
 
 // Collapse the node and all it's children
@@ -102,15 +138,20 @@ function update(source) {
   var flagEnter = node
     .enter()
     .filter(function(d) {
-      return d.data.displayAdditionalInfoFlag;
+      return (
+        Array.isArray(d.data.additionalInfo) && d.data.additionalInfo.length
+      );
     })
     .append('g')
     .attr('class', 'flag')
+    .attr('type', 'button')
+    .attr('data-toggle', 'modal')
+    .attr('data-target', '#nodeModal')
     .style('opacity', 1e-6)
     .attr('transform', function(d) {
       return 'translate(' + d.y + ',' + d.x + ')';
     })
-    .on('click', showTooltip);
+    .on('click', updateModalContent);
 
   flagEnter
     .append('rect')
@@ -247,33 +288,18 @@ function update(source) {
     update(d);
   }
 
-  function showTooltip(d) {
-    removeAllTooltips();
-
-    let tooltip = d3
-      .select('body')
-      .append('div')
-      .attr('class', 'tooltip')
-      .style('opacity', '0')
-      .style('display', 'none');
-
-    tooltip
-      .transition()
-      .duration(200)
-      .style('opacity', 1)
-      .style('display', 'block');
-    tooltip
-      .html(getTooltipContent(d))
-      .style('left', d.y + 108 + d.width / 2 + 'px') //108 = tooltip width,
-      .style('top', d.x + 45 + 72 + 'px'); //45 = difference between flag and top of node, 72 = tooltip height
-  }
-
-  function removeAllTooltips() {
-    let tooltips = d3.selectAll('.tooltip');
-    tooltips.remove();
-  }
-
-  function getTooltipContent(d) {
-    return d.data.additionalInfo.reduce((accumulator, text) => accumulator + "<p>" + text + "</p>");
+  function updateModalContent(d) {
+    let modalHeader = d3.select('#nodeModalLabel');
+    modalHeader.html(d.data.name);
+    let modalBody = d3.select('.modal-body');
+    modalBody.selectAll('a').remove();
+    modalBody.selectAll('br').remove();
+    d.data.additionalInfo.forEach(text => {
+      modalBody
+        .append('a')
+        .attr('href', text)
+        .html(text)
+        .append('br');
+    });
   }
 }

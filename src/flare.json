@@ -1,11 +1,10 @@
 {
   "name": "flare",
-  "displayAdditionalInfoFlag": "true",
   "additionalInfo": [
     "https://bost.ocks.org/mike/selection/",
     "https://bl.ocks.org/d3noob/43a860bc0024792f8803bba8ca0d5ecd",
     "http://alignedleft.com/tutorials/d3/binding-data/"
-  ], 
+  ],
   "children": [
     {
       "name": "analytics",
@@ -88,7 +87,7 @@
     },
     {
       "name": "display",
-      "displayAdditionalInfoFlag": "true",
+      "additionalInfo": ["https://bost.ocks.org/mike/selection/"],
       "children": [
         { "name": "DirtySprite", "size": 8833 },
         { "name": "LineSprite", "size": 1732 },
@@ -136,7 +135,10 @@
         { "name": "Maximum", "size": 843 },
         {
           "name": "methods",
-          "displayAdditionalInfoFlag": "true",
+          "additionalInfo": [
+            "https://bost.ocks.org/mike/selection/",
+            "http://alignedleft.com/tutorials/d3/binding-data/"
+          ],
           "children": [
             { "name": "add", "size": 593 },
             { "name": "and", "size": 330 },

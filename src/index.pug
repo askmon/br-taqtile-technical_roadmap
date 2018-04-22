@@ -2,7 +2,7 @@
 html(lang="en")
   head
     title Taqtile's Developer Roadmap
-    script(type="text/javascript" async src="./index.ts")
+    link(rel="stylesheet", href="../node_modules/bootstrap/dist/css/bootstrap.css")
     style.
       .node circle {
         cursor: pointer;
@@ -34,18 +34,6 @@ html(lang="en")
         stroke-width: 1.5px;
       }
 
-      .tooltip {
-        position: absolute;
-        line-height: 1;			
-        padding: 4px 15px;
-        text-align: center;
-        background: #fff;
-        color: #403d58;
-        border: 2px solid #403d58;
-        border-radius: 8px;
-      }
-
-
   body
     h1 Taqtile's Developer Roadmap
     svg(style="position:absolute;width:0;height:0;top:-200px;")
@@ -55,4 +43,6 @@ html(lang="en")
         path(d="M0,3v-3l6,3l-6,3z")
       marker(id="circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="9" markerHeight="9" orient="auto")
         circle(stroke="black" fill="white" r="2.5" cx="4" cy="4")
+    script(type="text/javascript" async src="../node_modules/bootstrap/dist/js/bootstrap.js")
+    script(type="text/javascript" async src="./index.ts")
     //- svg(width="2400" height="960")
