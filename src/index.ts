@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-
+import { Modal } from './modal';
 var treeData = require('./flare.json');
 
 // Set the dimensions and margins of the diagram
@@ -32,44 +32,10 @@ root = d3.hierarchy(treeData, function(d) {
 root.x0 = height / 2;
 root.y0 = 0;
 
+const modal = new Modal();
+
 // Collapse after the second level
 root.children.forEach(collapse);
-
-// Creates modal
-createModal();
-
-function createModal() {
-  let modal = d3
-    .select('body')
-    .append('div')
-    .attr('class', 'modal fade')
-    .attr('id', 'nodeModal')
-    .attr('tabIndex', '-1')
-    .attr('role', 'dialog')
-    .attr('aria-labelledby', 'nodeModal');
-  let modalContent = modal
-    .append('div')
-    .attr('class', 'modal-dialog')
-    .attr('role', 'document')
-    .append('div')
-    .attr('class', 'modal-content');
-  let modalHeader = modalContent.append('div').attr('class', 'modal-header');
-
-  modalHeader
-    .append('h5')
-    .attr('class', 'modal-title')
-    .attr('id', 'nodeModalLabel')
-    .html('Modal Title');
-  modalHeader
-    .append('button')
-    .attr('type', 'button')
-    .attr('class', 'close')
-    .attr('data-dismiss', 'modal')
-    .attr('aria-label', 'Close')
-    .html('<span aria-hidden="true">&times;</span>');
-
-  modalContent.append('div').attr('class', 'modal-body');
-}
 
 update(root);
 
@@ -135,57 +101,18 @@ function update(source) {
     });
 
   // Add coment flag if necessary
-  var flagEnter = node
-    .enter()
-    .filter(function(d) {
-      return (
-        Array.isArray(d.data.additionalInfo) && d.data.additionalInfo.length
-      );
-    })
-    .append('g')
-    .attr('class', 'flag')
-    .attr('type', 'button')
-    .attr('data-toggle', 'modal')
-    .attr('data-target', '#nodeModal')
-    .style('opacity', 1e-6)
-    .attr('transform', function(d) {
-      return 'translate(' + d.y + ',' + d.x + ')';
-    })
-    .on('click', updateModalContent);
-
-  flagEnter
-    .append('rect')
-    .attr('ry', 6)
-    .attr('rx', 6)
-    .attr('x', d => {
-      return (d.width - 10) / 2;
-    })
-    .attr('y', 15)
-    .attr('height', 10)
-    .attr('width', 10);
+  modal.appendModalFlag(node);
 
   // UPDATE
   var nodeUpdate = nodeEnter.merge(node);
 
-  // Update the flags...
-  var flag = svg.selectAll('g.flag').data(nodes, function(d) {
-    return d.id || (d.id = ++i);
-  });
-
-  var flagUpdate = flag;
+  // Update the flag
+  modal.updateFlag(svg, nodes, i);
 
   // Transition to the proper position for the node
   nodeUpdate
     .transition()
     .duration(duration)
-    .attr('transform', function(d) {
-      return 'translate(' + d.y + ',' + d.x + ')';
-    });
-
-  flagUpdate
-    .transition()
-    .duration(duration)
-    .style('opacity', 1)
     .attr('transform', function(d) {
       return 'translate(' + d.y + ',' + d.x + ')';
     });
@@ -207,14 +134,6 @@ function update(source) {
     .attr('transform', function(d) {
       return 'translate(' + source.y + ',' + source.x + ')';
     })
-    .remove();
-
-  // Remove any existing flag
-  var flagExit = flag
-    .exit()
-    .transition()
-    .duration(duration)
-    .style('opacity', 1e-6)
     .remove();
 
   // On exit reduce the node circles size to 0
@@ -286,20 +205,5 @@ function update(source) {
       d._children = null;
     }
     update(d);
-  }
-
-  function updateModalContent(d) {
-    let modalHeader = d3.select('#nodeModalLabel');
-    modalHeader.html(d.data.name);
-    let modalBody = d3.select('.modal-body');
-    modalBody.selectAll('a').remove();
-    modalBody.selectAll('br').remove();
-    d.data.additionalInfo.forEach(text => {
-      modalBody
-        .append('a')
-        .attr('href', text)
-        .html(text)
-        .append('br');
-    });
   }
 }
