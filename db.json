@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "name": "Basics",
+      "children": [
+        {
+          "name": "Version Control",
+          "children": [
+            {
+              "name": "Git",
+              "children": [
+                { "name": "Github", "size": 3938 }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Terminal",
+          "children": [
+            { "name": "Basic Commands", "size": 3534 },
+            { "name": "Git CLI", "size": 5731 },
+            { "name": "VIM", "size": 7840 }
+          ]
+        },
+        {
+          "name": "Code Editors",
+          "children": [
+            { "name": "VS Code", "size": 3534 }
+          ]
+        },
+        {
+          "name": "Programming",
+          "children": [
+            {
+              "name": "SOLID",
+              "children": [
+                { "name": "Single Responsibility" },
+                { "name": "Open/Close" },
+                { "name": "Liskov substitution" },
+                { "name": "Interface segregation" },
+                {
+                  "name": "Dependency inversion",
+                  "children": [
+                    {
+                      "name": "Dependency Injection",
+                      "children": [
+                        {
+                          "name": "typedi"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "KISS"
+            },
+            {
+              "name": "Design Patterns",
+              "children": [
+                { "name": "Singleton" },
+                { "name": "Factory" },
+                { "name": "Builder" },
+                { "name": "Interceptor" },
+                {
+                  "name": "Decorator"
+                },
+                { "name": "Facade" },
+                { "name": "Strategy" },
+                { "name": "Template Method" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

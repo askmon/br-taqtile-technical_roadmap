@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import { Modal } from './modal';
-var treeData = require('./flare.json');
+
+var treeData = [];
 
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 },
@@ -20,24 +21,33 @@ var svg = d3
 
 var i = 0,
   duration = 750,
-  root;
+  root,
+  treemap,
+  modal;
 
-// declares a tree layout and assigns the size
-var treemap = d3.tree().size([height, width]);
+fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
+.then((response) => {
+  return response.json();
+})
+.then((json) => {
+  treeData = json[0];
+  // declares a tree layout and assigns the size
+  treemap = d3.tree().size([height, width]);
 
-// Assigns parent, children, height, depth
-root = d3.hierarchy(treeData, function(d) {
-  return d.children;
+  // Assigns parent, children, height, depth
+  root = d3.hierarchy(treeData, function(d) {
+    return d.children;
+  });
+  root.x0 = height / 2;
+  root.y0 = 0;
+
+  modal = new Modal();
+
+  // Collapse after the second level
+  root.children.forEach(collapse);
+
+  update(root);
 });
-root.x0 = height / 2;
-root.y0 = 0;
-
-const modal = new Modal();
-
-// Collapse after the second level
-root.children.forEach(collapse);
-
-update(root);
 
 // Collapse the node and all it's children
 function collapse(d) {
