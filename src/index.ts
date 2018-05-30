@@ -25,7 +25,7 @@ var i = 0,
   treemap,
   modal;
 
-fetch('http://localhost:3000/nodes')
+fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
 .then((response) => {
   return response.json();
 })
