@@ -1,6 +1,13 @@
 import * as d3 from 'd3';
 import { Modal } from './modal';
 
+const priority = {
+  1: '#FFD700',
+  2: '#FF8C00',
+  3: '#87CEFA',
+  4: '#90EE90',
+}
+
 var treeData = [];
 
 // Set the dimensions and margins of the diagram
@@ -30,7 +37,7 @@ fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
   return response.json();
 })
 .then((json) => {
-  treeData = json[0];
+  treeData = json[1];
   // declares a tree layout and assigns the size
   treemap = d3.tree().size([height, width]);
 
@@ -91,13 +98,13 @@ function update(source) {
   // Add labels for the nodes
   nodeEnter
     .append('text')
-    .attr('dy', '.35em')
-    .attr('x', () => 6)
+    .attr('dy', '.5em')
+    .attr('x', () => 8)
     .text(function(d) {
       return d.data.name;
     })
     .each(function(d) {
-      d.width = Math.max(32, this.getComputedTextLength() + 12);
+      d.width = Math.max(30, this.getComputedTextLength() + 16);
     });
 
   nodeEnter
@@ -105,7 +112,11 @@ function update(source) {
     .attr('ry', 6)
     .attr('rx', 6)
     .attr('y', -10)
-    .attr('height', 20)
+    .attr('fill', function(d) {
+      console.log(priority[d.data.priority || 1]);
+      return priority[d.data.priority || 1];
+    })
+    .attr('height', 25)
     .attr('width', function(d) {
       return d.width;
     });
