@@ -2,12 +2,14 @@
   "nodes": [
     {
       "name": "Basics",
+      "priority": 1,
       "children": [
         {
           "name": "Version Control",
           "children": [
             {
               "name": "Git",
+              "priority": 1,
               "children": [
                 { "name": "Github", "size": 3938 }
               ]
@@ -16,16 +18,22 @@
         },
         {
           "name": "Terminal",
+          "priority": 1,
           "children": [
-            { "name": "Basic Commands", "size": 3534 },
-            { "name": "Git CLI", "size": 5731 },
-            { "name": "VIM", "size": 7840 }
+            { "name": "Basic Commands",
+              "priority": 1,
+              "additionalInfo": [
+                "https://github.com/0nn0/terminal-mac-cheatsheet"
+              ]
+            },
+            { "name": "Git CLI", "priority": 1 },
+            { "name": "VIM", "priority": 2 }
           ]
         },
         {
           "name": "Code Editors",
           "children": [
-            { "name": "VS Code", "size": 3534 }
+            { "name": "VS Code", "priority": 1 }
           ]
         },
         {
@@ -33,16 +41,19 @@
           "children": [
             {
               "name": "SOLID",
+              "priority": 1,
               "children": [
-                { "name": "Single Responsibility" },
-                { "name": "Open/Close" },
-                { "name": "Liskov substitution" },
-                { "name": "Interface segregation" },
+                { "name": "Single Responsibility", "priority": 1 },
+                { "name": "Open/Close", "priority": 1 },
+                { "name": "Liskov substitution", "priority": 1 },
+                { "name": "Interface segregation", "priority": 1 },
                 {
                   "name": "Dependency inversion",
+                  "priority": 2,
                   "children": [
                     {
                       "name": "Dependency Injection",
+                      "priority": 1,
                       "children": [
                         {
                           "name": "typedi"
@@ -54,21 +65,183 @@
               ]
             },
             {
-              "name": "KISS"
+              "name": "KISS",
+              "priority": 3
             },
             {
               "name": "Design Patterns",
+              "priority": 1,
               "children": [
-                { "name": "Singleton" },
-                { "name": "Factory" },
-                { "name": "Builder" },
-                { "name": "Interceptor" },
+                { "name": "Singleton", "priority": 1 },
+                { "name": "Factory", "priority": 1 },
+                { "name": "Builder", "priority": 1 },
+                { "name": "Interceptor", "priority": 1 },
                 {
-                  "name": "Decorator"
+                  "name": "Decorator", "priority": 1
                 },
-                { "name": "Facade" },
-                { "name": "Strategy" },
-                { "name": "Template Method" }
+                { "name": "Facade", "priority": 1 },
+                { "name": "Strategy", "priority": 1 },
+                { "name": "Template Method", "priority": 1 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web Development",
+      "priority": 1,
+      "children": [
+        {
+          "name": "Basics",
+          "children": [
+            {
+              "name": "HTML",
+              "priority": 1,
+              "children": [
+                { "name": "Semantic", "size": 3938 }
+              ]
+            },
+            {
+              "name": "CSS",
+              "priority": 1,
+              "children": [
+                { "name": "Floating", "size": 3938 },
+                { "name": "Flexbox", "size": 3938 },
+                {
+                  "name": "Box Model",
+                  "children": [
+                    { "name": "Positioning", "size": 3938 },
+                    { "name": "Display", "size": 3938 },
+                    { "name": "Overflow", "size": 3938 }
+                  ]
+                },
+                {
+                  "name": "Grid System",
+                  "children": [
+                    { "name": "CSS Grid", "priority": 2 }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Javascript",
+              "priority": 1,
+              "children": [
+                {
+                  "name": "Basic concepts",
+                  "children": [
+                    { "name": "Native data types" },
+                    { "name": "Operators" },
+                    {
+                      "name": "Control flow",
+                      "children": [
+                        { "name": "Error handling", "priority": 2}
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Functions",
+                  "children": [
+                    { "name": "Scopes and Closures"},
+                    { "name": "\"this\""},
+                    { "name": "Lambdas"}
+                  ]
+                },
+                {
+                  "name": "Functional Programming",
+                  "children": [
+                    { "name": "Arrays", "size": 3938 }
+                  ]
+                },
+                {
+                  "name": "Async programming",
+                  "children": [
+                    {
+                      "name": "Promises",
+                      "children": [
+                        { "name": "Async/Await", "size": 3938 }
+                      ]
+                    },
+                    {
+                      "name": "Reactive",
+                      "children": [
+                        { "name": "RxJS", "size": 3938 }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Terminal",
+          "priority": 1,
+          "children": [
+            { "name": "Basic Commands",
+              "priority": 1,
+              "additionalInfo": [
+                "https://github.com/0nn0/terminal-mac-cheatsheet"
+              ]
+            },
+            { "name": "Git CLI", "priority": 1 },
+            { "name": "VIM", "priority": 2 }
+          ]
+        },
+        {
+          "name": "Code Editors",
+          "children": [
+            { "name": "VS Code", "priority": 1 }
+          ]
+        },
+        {
+          "name": "Programming",
+          "children": [
+            {
+              "name": "SOLID",
+              "priority": 1,
+              "children": [
+                { "name": "Single Responsibility", "priority": 1 },
+                { "name": "Open/Close", "priority": 1 },
+                { "name": "Liskov substitution", "priority": 1 },
+                { "name": "Interface segregation", "priority": 1 },
+                {
+                  "name": "Dependency inversion",
+                  "priority": 2,
+                  "children": [
+                    {
+                      "name": "Dependency Injection",
+                      "priority": 1,
+                      "children": [
+                        {
+                          "name": "typedi"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "KISS",
+              "priority": 3
+            },
+            {
+              "name": "Design Patterns",
+              "priority": 1,
+              "children": [
+                { "name": "Singleton", "priority": 1 },
+                { "name": "Factory", "priority": 1 },
+                { "name": "Builder", "priority": 1 },
+                { "name": "Interceptor", "priority": 1 },
+                {
+                  "name": "Decorator", "priority": 1
+                },
+                { "name": "Facade", "priority": 1 },
+                { "name": "Strategy", "priority": 1 },
+                { "name": "Template Method", "priority": 1 }
               ]
             }
           ]
