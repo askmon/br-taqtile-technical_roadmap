@@ -37,7 +37,7 @@ fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
   return response.json();
 })
 .then((json) => {
-  treeData = json[1];
+  treeData = json[Math.floor(Math.random() * 3)];
   // declares a tree layout and assigns the size
   treemap = d3.tree().size([height, width]);
 
@@ -66,6 +66,7 @@ function collapse(d) {
 }
 
 function update(source) {
+
   // Assigns the x and y position for the nodes
   var treeData = treemap(root);
 
@@ -113,7 +114,6 @@ function update(source) {
     .attr('rx', 6)
     .attr('y', -10)
     .attr('fill', function(d) {
-      console.log(priority[d.data.priority || 1]);
       return priority[d.data.priority || 1];
     })
     .attr('height', 25)
