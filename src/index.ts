@@ -1,4 +1,6 @@
 import * as d3 from 'd3';
+import * as queryString from 'query-string';
+
 import { Modal } from './modal';
 
 const priority = {
@@ -32,12 +34,14 @@ var i = 0,
   treemap,
   modal;
 
+const parsedSearchParams = queryString.parse(location.search);
+
 fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
 .then((response) => {
   return response.json();
 })
 .then((json) => {
-  treeData = json[Math.floor(Math.random() * 3)];
+  treeData = json[parsedSearchParams.tree || 0];
   // declares a tree layout and assigns the size
   treemap = d3.tree().size([height, width]);
 
