@@ -1,4 +1,6 @@
 import * as d3 from 'd3';
+import * as queryString from 'query-string';
+
 import { Modal } from './modal';
 
 const priority = {
@@ -12,8 +14,8 @@ var treeData = [];
 
 // Set the dimensions and margins of the diagram
 var margin = { top: 20, right: 90, bottom: 30, left: 90 },
-  width = 2400 - margin.left - margin.right,
-  height = 960 - margin.top - margin.bottom;
+  width = window.innerWidth - margin.left - margin.right,
+  height = window.innerHeight - margin.top - margin.bottom - 70;
 
 // append the svg object to the body of the page
 // appends a 'group' element to 'svg'
@@ -23,6 +25,9 @@ var svg = d3
   .append('svg')
   .attr('width', width + margin.right + margin.left)
   .attr('height', height + margin.top + margin.bottom)
+  .call(d3.zoom().on("zoom", function () {
+    svg.attr("transform", d3.event.transform)
+  }))
   .append('g')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
@@ -32,12 +37,14 @@ var i = 0,
   treemap,
   modal;
 
+const parsedSearchParams = queryString.parse(location.search);
+
 fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
 .then((response) => {
   return response.json();
 })
 .then((json) => {
-  treeData = json[Math.floor(Math.random() * 3)];
+  treeData = json[parsedSearchParams.tree || 0];
   // declares a tree layout and assigns the size
   treemap = d3.tree().size([height, width]);
 
