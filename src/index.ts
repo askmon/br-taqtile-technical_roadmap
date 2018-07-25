@@ -126,6 +126,9 @@ function update(source) {
     .attr('fill', function(d) {
       return priority[d.data.priority || 1];
     })
+    .attr('style', (d) => {
+      return (d._children || d.children) ? '' : 'stroke-width:0.5px';
+    })
     .attr('height', 36)
     .attr('width', function(d) {
       return d.width;
