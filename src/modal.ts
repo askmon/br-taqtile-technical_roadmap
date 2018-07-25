@@ -59,13 +59,14 @@ export class Modal {
 
   private updateModalContent(d) {
     let modalHeader = d3.select('#node-modal-label');
-    modalHeader.html(d.data.name);
+    modalHeader.html(d.data.name + ' References');
     let modalBody = d3.select('.modal-body');
-    modalBody.selectAll('.link-container').remove();
-    let linkContainer = modalBody.append('div').attr('class', 'link-container');
+    modalBody.selectAll('.list-group').remove();
+    let listGroup = modalBody.append('div').attr('class', 'list-group list-group-flush');
     d.data.additionalInfo.forEach(text => {
-      linkContainer
+      listGroup
         .append('a')
+        .attr('class', 'list-group-item list-group-item-action text-truncate')
         .attr('href', text)
         .html(text)
         .append('br');

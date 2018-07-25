@@ -4,10 +4,10 @@ import * as queryString from 'query-string';
 import { Modal } from './modal';
 
 const priority = {
-  1: '#FFD700',
-  2: '#FF8C00',
-  3: '#87CEFA',
-  4: '#90EE90',
+  1: '#ffdf71',
+  2: '#ffc374',
+  3: '#83bbe5',
+  4: '#a3d977',
 }
 
 var treeData = [];
@@ -26,7 +26,7 @@ var svg = d3
   .attr('width', width + margin.right + margin.left)
   .attr('height', height + margin.top + margin.bottom)
   .call(d3.zoom().on("zoom", function () {
-    svg.attr("transform", d3.event.transform)
+    svg.attr("transform", d3.event.transform);
   }))
   .append('g')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
@@ -46,7 +46,7 @@ fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
 .then((json) => {
   treeData = json[parsedSearchParams.tree || 0];
   // declares a tree layout and assigns the size
-  treemap = d3.tree().size([height, width]);
+  treemap = d3.tree().size([height * 1, width]);
 
   // Assigns parent, children, height, depth
   root = d3.hierarchy(treeData, function(d) {
@@ -107,23 +107,29 @@ function update(source) {
   nodeEnter
     .append('text')
     .attr('dy', '.5em')
-    .attr('x', () => 8)
+    .attr('text-anchor', 'middle')
     .text(function(d) {
       return d.data.name;
     })
     .each(function(d) {
-      d.width = Math.max(30, this.getComputedTextLength() + 16);
-    });
+      d.width = Math.max(150, this.getComputedTextLength() + 16);
+    })
+    .attr('x', (d) => d.width / 2)
+    ;
+
 
   nodeEnter
     .insert('rect', 'text')
-    .attr('ry', 6)
-    .attr('rx', 6)
-    .attr('y', -10)
+    .attr('ry', 10)
+    .attr('rx', 10)
+    .attr('y', -16)
     .attr('fill', function(d) {
       return priority[d.data.priority || 1];
     })
-    .attr('height', 25)
+    .attr('style', (d) => {
+      return (d._children || d.children) ? '' : 'stroke-width:0.5px';
+    })
+    .attr('height', 36)
     .attr('width', function(d) {
       return d.width;
     });
@@ -183,7 +189,7 @@ function update(source) {
     .insert('path', 'g')
     .attr('class', 'link')
     .attr('d', function(d) {
-      var o = { x: source.x0, y: source.y0 };
+      var o = { x: source.x0, y: source.y0 + 50 };
       return diagonal(o, o);
     });
 
@@ -195,7 +201,8 @@ function update(source) {
     .transition()
     .duration(duration)
     .attr('d', function(d) {
-      return diagonal(d, d.parent);
+      var parent = { x: d.parent.x, y: d.parent.y + 50 };
+      return diagonal(d, parent);
     });
 
   // Remove any exiting links
@@ -204,7 +211,7 @@ function update(source) {
     .transition()
     .duration(duration)
     .attr('d', function(d) {
-      var o = { x: source.x, y: source.y };
+      var o = { x: source.x, y: source.y + 50 };
       return diagonal(o, o);
     })
     .remove();
