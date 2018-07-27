@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/d3": "^5.0.0",
+    "node-sass": "^4.9.2",
     "parcel-bundler": "^1.9.7",
     "pug": "^2.0.3",
     "typescript": "^2.9.2"

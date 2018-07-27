@@ -1,0 +1,32 @@
+
+.node {
+
+  cicle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  text {
+    font-size: 14px;
+    font-family: 'Delius', cursive;
+  }
+
+  rect {
+    stroke: #294554;
+    stroke-width: 1.5px;
+  }
+}
+
+path.link {
+  fill: none;
+  stroke: #0c7cba;
+  stroke-width: 3px;
+  marker-end: url(#end);
+}
+
+.flag {
+  fill: steelblue;
+  stroke: #636363;
+  stroke-width: 1.5px;
+}
