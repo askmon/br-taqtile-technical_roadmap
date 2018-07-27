@@ -67,6 +67,7 @@ export class Modal {
       listGroup
         .append('a')
         .attr('class', 'list-group-item list-group-item-action text-truncate')
+        .attr('target', '__blank')
         .attr('href', text)
         .html(text)
         .append('br');

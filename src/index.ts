@@ -115,6 +115,8 @@ function update(source) {
       d.width = Math.max(150, this.getComputedTextLength() + 16);
     })
     .attr('x', (d) => d.width / 2)
+    .attr('cursor', (d) => (d._children || d.children) ? 'pointer' : 'default')
+    .attr('opacity', (d) => (d._children || d.children) ? '1' : '0.7')
     ;
 
 
@@ -126,8 +128,10 @@ function update(source) {
     .attr('fill', function(d) {
       return priority[d.data.priority || 1];
     })
-    .attr('style', (d) => {
-      return (d._children || d.children) ? '' : 'stroke-width:0.5px';
+    .attr('style', (d) => (d._children || d.children) ? '' : 'stroke-width:0.5px')
+    .attr('fill-opacity', (d) => (d._children || d.children) ? '1' : '0.7')
+    .attr('cursor', (d) => {
+      return (d._children || d.children) ? 'pointer' : 'default';
     })
     .attr('height', 36)
     .attr('width', function(d) {
