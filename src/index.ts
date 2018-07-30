@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import * as queryString from 'query-string';
 
 import { Modal } from './modal';
+import { spinner } from './spinner';
 
 const priority = {
   1: '#ffdf71',
@@ -46,11 +47,16 @@ var i = 0,
 
 const parsedSearchParams = queryString.parse(location.search);
 
+spinner.config(width, height);
+spinner.start();
+
 fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
 .then((response) => {
   return response.json();
 })
 .then((json) => {
+  spinner.stop();
+
   treeData = json[parsedSearchParams.tree || 0];
   // declares a tree layout and assigns the size
   treemap = d3.tree().nodeSize([60, 10]);
