@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+doctype html
+
 html(lang="en")
   head
     title Developer's Roadmap
@@ -11,35 +12,7 @@ html(lang="en")
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous")
     link(href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet")
 
-    style.
-      .node circle {
-        fill: #fff;
-        stroke: steelblue;
-        stroke-width: 1.5px;
-      }
-
-      .node text {
-        font-size: 14px;
-        font-family: 'Delius', cursive;
-      }
-
-      .node rect {
-        stroke: #294554;
-        stroke-width: 1.5px;
-      }
-
-      path.link {
-        fill: none;
-        stroke: #0c7cba;
-        stroke-width: 3px;
-        marker-end: url(#end);
-      }
-
-      .flag {
-        fill: steelblue;
-        stroke: #636363;
-        stroke-width: 1.5px;
-      }
+    link(rel="stylesheet" href="assets/tree.scss")
 
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
@@ -63,6 +36,7 @@ html(lang="en")
               | DevOps
 
     include ./modal.pug
+    include ./spinner.pug
 
     svg(style="position:absolute;width:0;height:0;top:-200px;")
       marker(id="end" viewBox="0 0 20 20" refX="20" refY="10" markerWidth="12" markerHeight="12" orient="auto" markerUnits="userSpaceOnUse")
@@ -71,4 +45,5 @@ html(lang="en")
         path(d="M0,3v-3l6,3l-6,3z")
       marker(id="circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="9" markerHeight="9" orient="auto")
         circle(stroke="black" fill="white" r="2.5" cx="4" cy="4")
+
     script(type="text/javascript" async src="./index.ts")
