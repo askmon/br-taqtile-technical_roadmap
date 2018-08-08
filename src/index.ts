@@ -129,7 +129,6 @@ function update(source) {
     })
     .attr('x', (d) => d.width / 2)
     .attr('cursor', (d) => (d._children || d.children) ? 'pointer' : 'default')
-    .attr('opacity', (d) => (d._children || d.children) ? '1' : '0.7')
     ;
 
 
@@ -142,7 +141,6 @@ function update(source) {
       return priority[d.data.priority || 1];
     })
     .attr('style', (d) => (d._children || d.children) ? '' : 'stroke-width:0.5px')
-    .attr('fill-opacity', (d) => (d._children || d.children) ? '1' : '0.7')
     .attr('cursor', (d) => {
       return (d._children || d.children) ? 'pointer' : 'default';
     })
