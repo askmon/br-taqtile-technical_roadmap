@@ -3,13 +3,7 @@ import * as queryString from 'query-string';
 
 import { Modal } from './modal';
 import { spinner } from './spinner';
-
-const priority = {
-  1: '#ffdf71',
-  2: '#ffc374',
-  3: '#83bbe5',
-  4: '#a3d977',
-}
+import { priority, tooltip } from './tooltip';
 
 var treeData = [];
 
@@ -56,7 +50,6 @@ fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
 })
 .then((json) => {
   spinner.stop();
-
   treeData = json[parsedSearchParams.tree || 0];
   // declares a tree layout and assigns the size
   treemap = d3.tree().nodeSize([60, 10]);
@@ -69,7 +62,7 @@ fetch('https://knowledge-roadmap-server.herokuapp.com/nodes')
   root.y0 = 0;
 
   modal = new Modal();
-
+  tooltip.render();
   // Collapse after the second level
   root.children.forEach(collapse);
 
