@@ -13,14 +13,10 @@ export class Modal {
         Array.isArray(d.data.additionalInfo) && d.data.additionalInfo.length
       );
     })
-    .append('g')
-    .attr('class', 'flag')
-    .attr('type', 'button')
-    .attr('data-toggle', 'modal')
-    .attr('data-target', '#node-modal')
-    .style('opacity', 1e-6)
+    .append('use')
+    .attr('xlink:href', '#quote')
     .attr('transform', function(d) {
-      return 'translate(' + d.y + ',' + d.x + ')';
+      return 'translate(' + (+d.y + +d.width - 15) + ',' + (+d.x - 35) + ')';
     })
     .on('click', this.updateModalContent);
 
