@@ -13,23 +13,20 @@ export class Modal {
         Array.isArray(d.data.additionalInfo) && d.data.additionalInfo.length
       );
     })
-    .append('use')
-    .attr('xlink:href', '#quote')
+    .append('g')
+    .attr('class', 'flag')
+    .attr('type', 'button')
+    .attr('data-toggle', 'modal')
+    .attr('data-target', '#node-modal')
+    .style('opacity', 1e-6)
     .attr('transform', function(d) {
       return 'translate(' + (+d.y + +d.width - 15) + ',' + (+d.x - 35) + ')';
     })
     .on('click', this.updateModalContent);
 
     flagEnter
-      .append('rect')
-      .attr('ry', 6)
-      .attr('rx', 6)
-      .attr('x', d => {
-        return (d.width - 10) / 2;
-      })
-      .attr('y', 15)
-      .attr('height', 10)
-      .attr('width', 10);
+      .append('use')
+      .attr('xlink:href', '#quote');
   }
 
   updateFlag(svg, nodes, i){
@@ -42,8 +39,8 @@ export class Modal {
       .duration(duration)
       .style('opacity', 1)
       .attr('transform', function(d) {
-        return 'translate(' + d.y + ',' + d.x + ')';
-      });
+        return 'translate(' + (+d.y + +d.width - 15) + ',' + (+d.x - 35) + ')';
+      })
 
     flagUpdate
       .exit()
@@ -65,6 +62,9 @@ export class Modal {
         .attr('class', 'list-group-item list-group-item-action text-truncate')
         .attr('target', '__blank')
         .attr('href', text)
+        .style('background-color', '#343a40')
+        .style('border-color', 'white')
+        .style('color', 'white')
         .html(text)
         .append('br');
     });
