@@ -10,8 +10,17 @@
             {
               "name": "Git",
               "priority": 1,
+              "additionalInfo": [
+                "https://hackernoon.com/understanding-git-fcffd87c15a3"
+              ],
               "children": [
-                { "name": "Github", "size": 3938 }
+                { "name": "Github",
+                  "size": 3938,
+                  "additionalInfo": [
+                    "https://github.com",
+                    "https://lab.github.com/"
+                  ]
+                }
               ]
             }
           ]
@@ -27,13 +36,22 @@
               ]
             },
             { "name": "Git CLI", "priority": 1 },
-            { "name": "VIM", "priority": 2 }
+            {
+              "name": "VIM",
+              "priority": 2,
+              "additionalInfo": [
+                "https://vim-adventures.com/"
+              ]
+            }
           ]
         },
         {
           "name": "Code Editors",
           "children": [
-            { "name": "VS Code", "priority": 1 }
+            {
+              "name": "VS Code",
+              "priority": 1
+            }
           ]
         },
         {
@@ -496,7 +514,13 @@
               "priority": 1,
               "children": [
                 { "name": "Travis", "priority": 1 },
-                { "name": "Jenkins", "priority": 1 },
+                {
+                  "name": "Jenkins",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://medium.com/taqtilebr/automatizando-builds-de-android-usando-jenkins-e-docker-ee71236ae74b"
+                  ]
+                },
                 { "name": "Buildkite", "priority": 2 }
               ]
             },
