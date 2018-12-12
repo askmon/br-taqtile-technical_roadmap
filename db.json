@@ -11,7 +11,10 @@
               "name": "Git",
               "priority": 1,
               "children": [
-                { "name": "Github", "size": 3938 }
+                {
+                  "name": "Github",
+                  "size": 3938
+                }
               ]
             }
           ]
@@ -20,20 +23,30 @@
           "name": "Terminal",
           "priority": 1,
           "children": [
-            { "name": "Basic Commands",
+            {
+              "name": "Basic Commands",
               "priority": 1,
               "additionalInfo": [
                 "https://github.com/0nn0/terminal-mac-cheatsheet"
               ]
             },
-            { "name": "Git CLI", "priority": 1 },
-            { "name": "VIM", "priority": 2 }
+            {
+              "name": "Git CLI",
+              "priority": 1
+            },
+            {
+              "name": "VIM",
+              "priority": 2
+            }
           ]
         },
         {
           "name": "Code Editors",
           "children": [
-            { "name": "VS Code", "priority": 1 }
+            {
+              "name": "VS Code",
+              "priority": 1
+            }
           ]
         },
         {
@@ -43,10 +56,22 @@
               "name": "SOLID",
               "priority": 1,
               "children": [
-                { "name": "Single Responsibility", "priority": 1 },
-                { "name": "Open/Close", "priority": 1 },
-                { "name": "Liskov substitution", "priority": 1 },
-                { "name": "Interface segregation", "priority": 1 },
+                {
+                  "name": "Single Responsibility",
+                  "priority": 1
+                },
+                {
+                  "name": "Open/Close",
+                  "priority": 1
+                },
+                {
+                  "name": "Liskov substitution",
+                  "priority": 1
+                },
+                {
+                  "name": "Interface segregation",
+                  "priority": 1
+                },
                 {
                   "name": "Dependency inversion",
                   "priority": 2,
@@ -72,16 +97,38 @@
               "name": "Design Patterns",
               "priority": 1,
               "children": [
-                { "name": "Singleton", "priority": 1 },
-                { "name": "Factory", "priority": 1 },
-                { "name": "Builder", "priority": 1 },
-                { "name": "Interceptor", "priority": 1 },
                 {
-                  "name": "Decorator", "priority": 1
+                  "name": "Singleton",
+                  "priority": 1
                 },
-                { "name": "Facade", "priority": 1 },
-                { "name": "Strategy", "priority": 1 },
-                { "name": "Template Method", "priority": 1 }
+                {
+                  "name": "Factory",
+                  "priority": 1
+                },
+                {
+                  "name": "Builder",
+                  "priority": 1
+                },
+                {
+                  "name": "Interceptor",
+                  "priority": 1
+                },
+                {
+                  "name": "Decorator",
+                  "priority": 1
+                },
+                {
+                  "name": "Facade",
+                  "priority": 1
+                },
+                {
+                  "name": "Strategy",
+                  "priority": 1
+                },
+                {
+                  "name": "Template Method",
+                  "priority": 1
+                }
               ]
             }
           ]
@@ -148,7 +195,7 @@
                         "https://css-tricks.com/almanac/properties/p/position/",
                         "https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/"
                       ]
-                     },
+                    },
                     {
                       "name": "Display",
                       "size": 3938,
@@ -177,7 +224,7 @@
                         "https://gridbyexample.com/",
                         "https://css-tricks.com/snippets/css/complete-guide-grid/"
                       ]
-                     }
+                    }
                   ]
                 }
               ]
@@ -189,12 +236,19 @@
                 {
                   "name": "Basic concepts",
                   "children": [
-                    { "name": "Native data types" },
-                    { "name": "Operators" },
+                    {
+                      "name": "Native data types"
+                    },
+                    {
+                      "name": "Operators"
+                    },
                     {
                       "name": "Control flow",
                       "children": [
-                        { "name": "Error handling", "priority": 2}
+                        {
+                          "name": "Error handling",
+                          "priority": 2
+                        }
                       ]
                     }
                   ]
@@ -202,15 +256,24 @@
                 {
                   "name": "Functions",
                   "children": [
-                    { "name": "Scopes and Closures"},
-                    { "name": "\"this\""},
-                    { "name": "Lambdas"}
+                    {
+                      "name": "Scopes and Closures"
+                    },
+                    {
+                      "name": "\"this\""
+                    },
+                    {
+                      "name": "Lambdas"
+                    }
                   ]
                 },
                 {
                   "name": "Functional Programming",
                   "children": [
-                    { "name": "Arrays", "size": 3938 }
+                    {
+                      "name": "Arrays",
+                      "size": 3938
+                    }
                   ]
                 },
                 {
@@ -219,13 +282,19 @@
                     {
                       "name": "Promises",
                       "children": [
-                        { "name": "Async/Await", "size": 3938 }
+                        {
+                          "name": "Async/Await",
+                          "size": 3938
+                        }
                       ]
                     },
                     {
                       "name": "Reactive",
                       "children": [
-                        { "name": "RxJS", "size": 3938 }
+                        {
+                          "name": "RxJS",
+                          "size": 3938
+                        }
                       ]
                     }
                   ]
@@ -238,38 +307,70 @@
           "name": "Towards Taqtile Stack",
           "priority": 1,
           "children": [
-            { "name": "Typescript",
+            {
+              "name": "Typescript",
               "priority": 1,
               "children": [
                 {
                   "name": "Basic Concepts",
                   "children": [
-                    { "name": "Native Data Types", "priority": 1 },
-                    { "name": "Enum", "priority": 1 },
-                    { "name": "Class & Interface", "priority": 1 }
+                    {
+                      "name": "Native Data Types",
+                      "priority": 1
+                    },
+                    {
+                      "name": "Enum",
+                      "priority": 1
+                    },
+                    {
+                      "name": "Class & Interface",
+                      "priority": 1
+                    }
                   ]
                 },
-                { "name": "Modules", "priority": 1 },
-                { "name": "Generics", "priority": 2 },
-                { "name": "Decorators", "priority": 2 },
+                {
+                  "name": "Modules",
+                  "priority": 1
+                },
+                {
+                  "name": "Generics",
+                  "priority": 2
+                },
+                {
+                  "name": "Decorators",
+                  "priority": 2
+                },
                 {
                   "name": "Declaration files",
                   "priority": 2,
                   "children": [
-                    { "name": "@types" }
+                    {
+                      "name": "@types"
+                    }
                   ]
                 },
-                { "name": "Compiler config", "priority": 3 }
+                {
+                  "name": "Compiler config",
+                  "priority": 3
+                }
               ]
             },
-            { "name": "Webpack" },
+            {
+              "name": "Webpack"
+            },
             {
               "name": "GraphQL",
               "priority": 1,
               "children": [
-                { "name": "Fragments" },
-                { "name": "Queries" },
-                { "name": "Mutations" }
+                {
+                  "name": "Fragments"
+                },
+                {
+                  "name": "Queries"
+                },
+                {
+                  "name": "Mutations"
+                }
               ]
             }
           ]
@@ -277,32 +378,55 @@
         {
           "name": "Advanced",
           "children": [
-            { "name": "Angular", "priority": 3 },
+            {
+              "name": "Angular",
+              "priority": 3
+            },
             {
               "name": "React",
               "priority": 1,
               "children": [
-                { "name": "HOC" },
-                { "name": "React-Router" },
-                { "name": "Styled Components" },
-                { "name": "MobX" },
+                {
+                  "name": "HOC"
+                },
+                {
+                  "name": "React-Router"
+                },
+                {
+                  "name": "Styled Components"
+                },
+                {
+                  "name": "MobX"
+                },
                 {
                   "name": "template-react",
                   "children": [
                     {
                       "name": "Web",
                       "children": [
-                        { "name": "Cookies" },
-                        { "name": "Server side rendering" },
-                        { "name": "SEO" }
+                        {
+                          "name": "Cookies"
+                        },
+                        {
+                          "name": "Server side rendering"
+                        },
+                        {
+                          "name": "SEO"
+                        }
                       ]
-                     },
+                    },
                     {
                       "name": "GraphQL",
                       "children": [
-                        { "name": "Writing Queries" },
-                        { "name": "Schema sync" },
-                        { "name": "Apollo client" }
+                        {
+                          "name": "Writing Queries"
+                        },
+                        {
+                          "name": "Schema sync"
+                        },
+                        {
+                          "name": "Apollo client"
+                        }
                       ]
                     }
                   ]
@@ -314,7 +438,7 @@
       ]
     },
     {
-      "name" : "Server",
+      "name": "Server",
       "children": [
         {
           "name": "Basics",
@@ -327,15 +451,24 @@
                   "name": "deploy",
                   "priority": 2,
                   "children": [
-                    { "name": "pm2", "priority": 2 }
+                    {
+                      "name": "pm2",
+                      "priority": 2
+                    }
                   ]
                 },
                 {
                   "name": "Package Manager",
                   "priority": 2,
                   "children": [
-                    { "name": "npm", "priority": 2 },
-                    { "name": "yarn", "priority": 2 }
+                    {
+                      "name": "npm",
+                      "priority": 2
+                    },
+                    {
+                      "name": "yarn",
+                      "priority": 2
+                    }
                   ]
                 },
                 {
@@ -346,8 +479,14 @@
                       "name": "security",
                       "priority": 1,
                       "children": [
-                        { "name": "helmet", "priority": 2 },
-                        { "name": "JWT", "priority": 1 }
+                        {
+                          "name": "helmet",
+                          "priority": 2
+                        },
+                        {
+                          "name": "JWT",
+                          "priority": 1
+                        }
                       ]
                     }
                   ]
@@ -371,16 +510,34 @@
               "name": "template-node",
               "priority": 1,
               "children": [
-                { "name": "typedi", "priority": 1 },
-                { "name": "typeorm", "priority": 1 },
-                { "name": "migrations", "priority": 1 },
-                { "name": "workers", "priority": 1 },
+                {
+                  "name": "typedi",
+                  "priority": 1
+                },
+                {
+                  "name": "typeorm",
+                  "priority": 1
+                },
+                {
+                  "name": "migrations",
+                  "priority": 1
+                },
+                {
+                  "name": "workers",
+                  "priority": 1
+                },
                 {
                   "name": "GraphQL",
                   "priority": 1,
                   "children": [
-                    { "name": "Apollo Server", "priority": 2 },
-                    { "name": "Schema Decorator", "priority": 1 }
+                    {
+                      "name": "Apollo Server",
+                      "priority": 2
+                    },
+                    {
+                      "name": "Schema Decorator",
+                      "priority": 1
+                    }
                   ]
                 }
               ]
@@ -393,14 +550,20 @@
                   "name": "SQL",
                   "priority": 1,
                   "children": [
-                    { "name": "PostgreSQL", "priority": 1 }
+                    {
+                      "name": "PostgreSQL",
+                      "priority": 1
+                    }
                   ]
                 },
                 {
                   "name": "NoSQL",
                   "priority": 3,
                   "children": [
-                    { "name": "MongoDB", "priority": 3 }
+                    {
+                      "name": "MongoDB",
+                      "priority": 3
+                    }
                   ]
                 }
               ]
@@ -410,7 +573,7 @@
       ]
     },
     {
-      "name" : "DevOps",
+      "name": "DevOps",
       "children": [
         {
           "name": "Basics",
@@ -495,9 +658,18 @@
               "name": "CI",
               "priority": 1,
               "children": [
-                { "name": "Travis", "priority": 1 },
-                { "name": "Jenkins", "priority": 1 },
-                { "name": "Buildkite", "priority": 2 }
+                {
+                  "name": "Travis",
+                  "priority": 1
+                },
+                {
+                  "name": "Jenkins",
+                  "priority": 1
+                },
+                {
+                  "name": "Buildkite",
+                  "priority": 2
+                }
               ]
             },
             {
@@ -508,7 +680,10 @@
                   "name": "Docker",
                   "priority": 1,
                   "children": [
-                    { "name": "Docker Compose", "priority": 2 }
+                    {
+                      "name": "Docker Compose",
+                      "priority": 2
+                    }
                   ]
                 },
                 {
@@ -521,11 +696,23 @@
               "name": "Network",
               "priority": 2,
               "children": [
-                { "name": "FTP", "priority": 2 },
-                { "name": "TLS", "priority": 3 },
-                { "name": "SSL", "priority": 2 },
-                { "name": "HTTPS", "priority": 1 }
-             ]
+                {
+                  "name": "FTP",
+                  "priority": 2
+                },
+                {
+                  "name": "TLS",
+                  "priority": 3
+                },
+                {
+                  "name": "SSL",
+                  "priority": 2
+                },
+                {
+                  "name": "HTTPS",
+                  "priority": 1
+                }
+              ]
             }
           ]
         }
