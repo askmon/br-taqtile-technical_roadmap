@@ -5,6 +5,13 @@ import { Modal } from './modal';
 import { spinner } from './spinner';
 import { priority, tooltip } from './tooltip';
 
+/**
+ * Dis-comment this code to read the JSON from a local file instead of from
+ * the API
+ */
+// var fs = require('fs');
+// var json = JSON.parse(fs.readFileSync('db.json', 'utf8')).nodes;
+
 var treeData = [];
 
 const navBarHeight = 70;
