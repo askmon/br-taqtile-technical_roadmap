@@ -10,8 +10,18 @@
             {
               "name": "Git",
               "priority": 1,
+              "additionalInfo": [
+                "https://git-scm.com/",
+                "https://docs.google.com/document/d/1AT5znn6hFrl3sTaR-0asnEIlKaNwCn0oBOBN4Dl1_Kw/edit?usp=sharing"
+              ],
               "children": [
-                { "name": "Github", "size": 3938 }
+                {
+                  "name": "Github",
+                  "size": 3938,
+                  "additionalInfo": [
+                    "https://github.com/"
+                  ]
+                }
               ]
             }
           ]
@@ -20,20 +30,36 @@
           "name": "Terminal",
           "priority": 1,
           "children": [
-            { "name": "Basic Commands",
+            {
+              "name": "Basic Commands",
               "priority": 1,
               "additionalInfo": [
                 "https://github.com/0nn0/terminal-mac-cheatsheet"
               ]
             },
-            { "name": "Git CLI", "priority": 1 },
-            { "name": "VIM", "priority": 2 }
+            {
+              "name": "Git CLI",
+              "priority": 1
+            },
+            {
+              "name": "VIM",
+              "priority": 2,
+              "additionalInfo": [
+                "https://www.evernote.com/l/AOsKoIcty4xID7WxDg5UPJMdwHSI8JY9cpI"
+              ]
+            }
           ]
         },
         {
           "name": "Code Editors",
           "children": [
-            { "name": "VS Code", "priority": 1 }
+            {
+              "name": "VS Code",
+              "priority": 1,
+              "additionalInfo": [
+                "https://code.visualstudio.com/docs/getstarted/introvideos"
+              ]
+            }
           ]
         },
         {
@@ -42,11 +68,28 @@
             {
               "name": "SOLID",
               "priority": 1,
+              "additionalInfo": [
+                "https://docs.google.com/spreadsheets/d/1vq5eaShsmT8DZhC6mnF3ug7QRTiK84DRAOArijykOFA/edit?usp=sharing",
+                "https://drive.google.com/drive/folders/0Bw2e_BFOeT46fkYxWUFxOGN1QWJVcjlEaS1SX3RFODcwMEQ5bU5TRlhReGN1WVc4ZHhaWkU?usp=sharing",
+                "https://www.evernote.com/l/AOuR-sNen6pDR6-KwhltrK8TjF6ZkcwuGGk"
+              ],
               "children": [
-                { "name": "Single Responsibility", "priority": 1 },
-                { "name": "Open/Close", "priority": 1 },
-                { "name": "Liskov substitution", "priority": 1 },
-                { "name": "Interface segregation", "priority": 1 },
+                {
+                  "name": "Single Responsibility",
+                  "priority": 1
+                },
+                {
+                  "name": "Open/Close",
+                  "priority": 1
+                },
+                {
+                  "name": "Liskov substitution",
+                  "priority": 1
+                },
+                {
+                  "name": "Interface segregation",
+                  "priority": 1
+                },
                 {
                   "name": "Dependency inversion",
                   "priority": 2,
@@ -56,7 +99,10 @@
                       "priority": 1,
                       "children": [
                         {
-                          "name": "typedi"
+                          "name": "typedi",
+                          "additionalInfo": [
+                            "https://github.com/typestack/typedi"
+                          ]
                         }
                       ]
                     }
@@ -71,17 +117,71 @@
             {
               "name": "Design Patterns",
               "priority": 1,
+              "additionalInfo": [
+                "https://www.evernote.com/l/AOuR-sNen6pDR6-KwhltrK8TjF6ZkcwuGGk",
+                "https://sourcemaking.com/design_patterns"
+              ],
               "children": [
-                { "name": "Singleton", "priority": 1 },
-                { "name": "Factory", "priority": 1 },
-                { "name": "Builder", "priority": 1 },
-                { "name": "Interceptor", "priority": 1 },
                 {
-                  "name": "Decorator", "priority": 1
+                  "name": "Singleton",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/singleton"
+                  ]
                 },
-                { "name": "Facade", "priority": 1 },
-                { "name": "Strategy", "priority": 1 },
-                { "name": "Template Method", "priority": 1 }
+                {
+                  "name": "Factory",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/factory_method"
+                  ]
+                },
+                {
+                  "name": "Builder",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/builder"
+                  ]
+                },
+                {
+                  "name": "Interceptor",
+                  "priority": 1
+                },
+                {
+                  "name": "Decorator",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/decorator",
+                  ]
+                },
+                {
+                  "name": "Facade",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/facade"
+                  ]
+                },
+                {
+                  "name": "Strategy",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/strategy"
+                  ]
+                },
+                {
+                  "name": "Observer",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/observer"
+                  ]
+                },
+                {
+                  "name": "Template Method",
+                  "priority": 1,
+                  "additionalInfo": [
+                    "https://sourcemaking.com/design_patterns/template_method"
+                  ]
+                }
               ]
             }
           ]
@@ -113,6 +213,7 @@
               "name": "CSS",
               "priority": 1,
               "additionalInfo": [
+                "https://docs.google.com/document/d/1TVSnxkaGNPlTaVDSPzcoIYrhwPlxSGFF_Z1L_HYcVK8/edit?usp=sharing",
                 "https://www.smashingmagazine.com/2018/01/understanding-sizing-css-layout/"
               ],
               "children": [
@@ -148,7 +249,7 @@
                         "https://css-tricks.com/almanac/properties/p/position/",
                         "https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/"
                       ]
-                     },
+                    },
                     {
                       "name": "Display",
                       "size": 3938,
@@ -177,7 +278,7 @@
                         "https://gridbyexample.com/",
                         "https://css-tricks.com/snippets/css/complete-guide-grid/"
                       ]
-                     }
+                    }
                   ]
                 }
               ]
@@ -185,16 +286,28 @@
             {
               "name": "Javascript",
               "priority": 1,
+              "additionalInfo": [
+                "https://learnxinyminutes.com/docs/javascript/",
+                "https://github.com/getify/You-Dont-Know-JS",
+                "https://github.com/leonardomso/33-js-concepts"
+              ],
               "children": [
                 {
                   "name": "Basic concepts",
                   "children": [
-                    { "name": "Native data types" },
-                    { "name": "Operators" },
+                    {
+                      "name": "Native data types"
+                    },
+                    {
+                      "name": "Operators"
+                    },
                     {
                       "name": "Control flow",
                       "children": [
-                        { "name": "Error handling", "priority": 2}
+                        {
+                          "name": "Error handling",
+                          "priority": 2
+                        }
                       ]
                     }
                   ]
@@ -202,15 +315,28 @@
                 {
                   "name": "Functions",
                   "children": [
-                    { "name": "Scopes and Closures"},
-                    { "name": "\"this\""},
-                    { "name": "Lambdas"}
+                    {
+                      "name": "Scopes and Closures"
+                    },
+                    {
+                      "name": "\"this\""
+                    },
+                    {
+                      "name": "Lambdas"
+                    }
                   ]
                 },
                 {
                   "name": "Functional Programming",
+                  "additionalInfo": [
+                    "https://hackernoon.com/javascript-and-functional-programming-an-introduction-286aa625e26d",
+                    "https://medium.com/the-renaissance-developer/concepts-of-functional-programming-in-javascript-6bc84220d2aa"
+                  ],
                   "children": [
-                    { "name": "Arrays", "size": 3938 }
+                    {
+                      "name": "Arrays",
+                      "size": 3938
+                    }
                   ]
                 },
                 {
@@ -219,13 +345,22 @@
                     {
                       "name": "Promises",
                       "children": [
-                        { "name": "Async/Await", "size": 3938 }
+                        {
+                          "name": "Async/Await",
+                          "size": 3938
+                        }
                       ]
                     },
                     {
                       "name": "Reactive",
+                      "additionalInfo": [
+                        "http://reactivex.io/"
+                      ],
                       "children": [
-                        { "name": "RxJS", "size": 3938 }
+                        {
+                          "name": "RxJS",
+                          "size": 3938
+                        }
                       ]
                     }
                   ]
@@ -238,38 +373,82 @@
           "name": "Towards Taqtile Stack",
           "priority": 1,
           "children": [
-            { "name": "Typescript",
+            {
+              "name": "Typescript",
               "priority": 1,
+              "additionalInfo": [
+                "https://www.typescriptlang.org/docs/home.html"
+              ],
               "children": [
                 {
                   "name": "Basic Concepts",
                   "children": [
-                    { "name": "Native Data Types", "priority": 1 },
-                    { "name": "Enum", "priority": 1 },
-                    { "name": "Class & Interface", "priority": 1 }
+                    {
+                      "name": "Native Data Types",
+                      "priority": 1
+                    },
+                    {
+                      "name": "Enum",
+                      "priority": 1
+                    },
+                    {
+                      "name": "Class & Interface",
+                      "priority": 1
+                    }
                   ]
                 },
-                { "name": "Modules", "priority": 1 },
-                { "name": "Generics", "priority": 2 },
-                { "name": "Decorators", "priority": 2 },
+                {
+                  "name": "Modules",
+                  "priority": 1
+                },
+                {
+                  "name": "Generics",
+                  "priority": 2
+                },
+                {
+                  "name": "Decorators",
+                  "priority": 2,
+                  "additionalInfo": [
+                    "http://blog.wolksoftware.com/decorators-reflection-javascript-typescript"
+                  ]
+                },
                 {
                   "name": "Declaration files",
                   "priority": 2,
                   "children": [
-                    { "name": "@types" }
+                    {
+                      "name": "@types"
+                    }
                   ]
                 },
-                { "name": "Compiler config", "priority": 3 }
+                {
+                  "name": "Compiler config",
+                  "priority": 3
+                }
               ]
             },
-            { "name": "Webpack" },
+            {
+              "name": "Webpack",
+              "additionalInfo": [
+                "https://github.com/indigotech/eok-weekly/issues/11"
+              ]
+            },
             {
               "name": "GraphQL",
               "priority": 1,
+              "additionalInfo": [
+                "https://graphql.org/learn/"
+              ],
               "children": [
-                { "name": "Fragments" },
-                { "name": "Queries" },
-                { "name": "Mutations" }
+                {
+                  "name": "Fragments"
+                },
+                {
+                  "name": "Queries"
+                },
+                {
+                  "name": "Mutations"
+                }
               ]
             }
           ]
@@ -277,32 +456,86 @@
         {
           "name": "Advanced",
           "children": [
-            { "name": "Angular", "priority": 3 },
+            {
+              "name": "Angular",
+              "priority": 3
+            },
             {
               "name": "React",
               "priority": 1,
+              "additionalInfo": [
+                "https://reactjs.org/docs/getting-started.html"
+              ],
               "children": [
-                { "name": "HOC" },
-                { "name": "React-Router" },
-                { "name": "Styled Components" },
-                { "name": "MobX" },
+                {
+                  "name": "React patterns (HOC, render props)",
+                  "additionalInfo": [
+                    "https://reactpatterns.com/"
+                  ]
+                },
+                {
+                  "name": "Presentational and Container components",
+                  "additionalInfo": [
+                    "https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0"
+                  ]
+                },
+                {
+                  "name": "React-Router",
+                  "additionalInfo": [
+                    "https://reacttraining.com/react-router/web/guides/quick-start"
+                  ]
+                },
+                {
+                  "name": "Styled Components",
+                  "additionalInfo": [
+                    "https://www.styled-components.com/docs/basics"
+                  ]
+                },
+                {
+                  "name": "MobX"
+                },
                 {
                   "name": "template-react",
                   "children": [
                     {
                       "name": "Web",
                       "children": [
-                        { "name": "Cookies" },
-                        { "name": "Server side rendering" },
-                        { "name": "SEO" }
+                        {
+                          "name": "Storage",
+                          "additionalInfo": [
+                            "https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Storage_API_pt_br"
+                          ]
+                        },
+                        {
+                          "name": "Cookies"
+                        },
+                        {
+                          "name": "Server side rendering",
+                          "additionalInfo": [
+                            "https://github.com/indigotech/eok-weekly/issues/83",
+                            "https://github.com/indigotech/eok-weekly/issues/257"
+                          ]
+                        },
+                        {
+                          "name": "SEO",
+                          "additionalInfo": [
+                            "https://github.com/indigotech/eok-weekly/issues/15",
+                          ]
+                        }
                       ]
-                     },
+                    },
                     {
                       "name": "GraphQL",
                       "children": [
-                        { "name": "Writing Queries" },
-                        { "name": "Schema sync" },
-                        { "name": "Apollo client" }
+                        {
+                          "name": "Writing Queries"
+                        },
+                        {
+                          "name": "Schema sync"
+                        },
+                        {
+                          "name": "Apollo client"
+                        }
                       ]
                     }
                   ]
@@ -314,7 +547,7 @@
       ]
     },
     {
-      "name" : "Server",
+      "name": "Server",
       "children": [
         {
           "name": "Basics",
@@ -327,15 +560,27 @@
                   "name": "deploy",
                   "priority": 2,
                   "children": [
-                    { "name": "pm2", "priority": 2 }
+                    {
+                      "name": "pm2",
+                      "priority": 2,
+                      "additionalInfo": [
+                        "http://pm2.keymetrics.io/"
+                      ]
+                    }
                   ]
                 },
                 {
                   "name": "Package Manager",
                   "priority": 2,
                   "children": [
-                    { "name": "npm", "priority": 2 },
-                    { "name": "yarn", "priority": 2 }
+                    {
+                      "name": "npm",
+                      "priority": 2
+                    },
+                    {
+                      "name": "yarn",
+                      "priority": 2
+                    }
                   ]
                 },
                 {
@@ -346,8 +591,20 @@
                       "name": "security",
                       "priority": 1,
                       "children": [
-                        { "name": "helmet", "priority": 2 },
-                        { "name": "JWT", "priority": 1 }
+                        {
+                          "name": "helmet",
+                          "priority": 2,
+                          "additionalInfo": [
+                            "https://github.com/helmetjs/helmet"
+                          ]
+                        },
+                        {
+                          "name": "JWT",
+                          "priority": 1,
+                          "additionalInfo": [
+                            "https://jwt.io/"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -370,17 +627,38 @@
             {
               "name": "template-node",
               "priority": 1,
+              "additionalInfo": [
+                "https://github.com/indigotech/template-node"
+              ],
               "children": [
-                { "name": "typedi", "priority": 1 },
-                { "name": "typeorm", "priority": 1 },
-                { "name": "migrations", "priority": 1 },
-                { "name": "workers", "priority": 1 },
+                {
+                  "name": "typedi",
+                  "priority": 1
+                },
+                {
+                  "name": "typeorm",
+                  "priority": 1
+                },
+                {
+                  "name": "migrations",
+                  "priority": 1
+                },
+                {
+                  "name": "workers",
+                  "priority": 1
+                },
                 {
                   "name": "GraphQL",
                   "priority": 1,
                   "children": [
-                    { "name": "Apollo Server", "priority": 2 },
-                    { "name": "Schema Decorator", "priority": 1 }
+                    {
+                      "name": "Apollo Server",
+                      "priority": 2
+                    },
+                    {
+                      "name": "Schema Decorator",
+                      "priority": 1
+                    }
                   ]
                 }
               ]
@@ -393,14 +671,20 @@
                   "name": "SQL",
                   "priority": 1,
                   "children": [
-                    { "name": "PostgreSQL", "priority": 1 }
+                    {
+                      "name": "PostgreSQL",
+                      "priority": 1
+                    }
                   ]
                 },
                 {
                   "name": "NoSQL",
                   "priority": 3,
                   "children": [
-                    { "name": "MongoDB", "priority": 3 }
+                    {
+                      "name": "MongoDB",
+                      "priority": 3
+                    }
                   ]
                 }
               ]
@@ -410,7 +694,7 @@
       ]
     },
     {
-      "name" : "DevOps",
+      "name": "DevOps",
       "children": [
         {
           "name": "Basics",
@@ -495,9 +779,18 @@
               "name": "CI",
               "priority": 1,
               "children": [
-                { "name": "Travis", "priority": 1 },
-                { "name": "Jenkins", "priority": 1 },
-                { "name": "Buildkite", "priority": 2 }
+                {
+                  "name": "Travis",
+                  "priority": 1
+                },
+                {
+                  "name": "Jenkins",
+                  "priority": 1
+                },
+                {
+                  "name": "Buildkite",
+                  "priority": 2
+                }
               ]
             },
             {
@@ -508,7 +801,10 @@
                   "name": "Docker",
                   "priority": 1,
                   "children": [
-                    { "name": "Docker Compose", "priority": 2 }
+                    {
+                      "name": "Docker Compose",
+                      "priority": 2
+                    }
                   ]
                 },
                 {
@@ -521,11 +817,23 @@
               "name": "Network",
               "priority": 2,
               "children": [
-                { "name": "FTP", "priority": 2 },
-                { "name": "TLS", "priority": 3 },
-                { "name": "SSL", "priority": 2 },
-                { "name": "HTTPS", "priority": 1 }
-             ]
+                {
+                  "name": "FTP",
+                  "priority": 2
+                },
+                {
+                  "name": "TLS",
+                  "priority": 3
+                },
+                {
+                  "name": "SSL",
+                  "priority": 2
+                },
+                {
+                  "name": "HTTPS",
+                  "priority": 1
+                }
+              ]
             }
           ]
         }
